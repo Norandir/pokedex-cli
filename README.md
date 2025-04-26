@@ -1,62 +1,36 @@
-# Pokedex API - FastAPI Backend
+# Pokedex CLI - Pokémon Search Tool
 
 ## Description
-A simple Pokémon Pokédex API built using FastAPI and SQLite. This backend serves Pokémon data including names, types, descriptions, and images.
+A command-line interface (CLI) application that connects to the Pokedex API and allows users to search for Pokémon by name or type. Built for developers, hobbyists, and Pokémon fans who prefer using a lightweight terminal-based interface to explore Pokémon data.
 
 ## Features
-- API endpoints to retrieve all Pokémon, Pokémon by name, or Pokémon by type
-- Case-insensitive search for names and types
-- Serves static images for each Pokémon from a local directory
-- Lightweight and fast with easy local setup
+- Search for a Pokémon by name
+- Search for Pokémon by type
+- Accepts either type name or menu number for type search
+- Case-insensitive input handling
+- Easy-to-read printed results in the terminal
 
-## Installation Instructions
-1. Clone this repository:
+## Installation
+1. Clone the repository:
    ```bash
    git clone https://github.com/norandir/pokedex-api-cli.git
    ```
-
-2. Navigate into the backend project directory:
-   ```bash
-   cd pokedex-api-cli/backend
-   ```
-
-3. Install required dependencies:
+2. Install dependencies:
    ```bash
    pip install -r requirements.txt
    ```
 
-4. (Optional but recommended) Create a virtual environment:
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   ```
-
 ## Usage
-Run the FastAPI server using Uvicorn:
+Run the CLI:
 ```bash
-uvicorn main:app --reload
+python pokemon_cli.py
 ```
 
-Access the API at:
-- API base URL: `http://127.0.0.1:8000/`
-- Interactive docs: `http://127.0.0.1:8000/docs`
-
-Example:
-```bash
-# Get all Pokémon
-GET http://127.0.0.1:8000/pokemon
-
-# Get a Pokémon by name
-GET http://127.0.0.1:8000/pokemon/Charmander
-
-# Get Pokémon by type
-GET http://127.0.0.1:8000/pokemon/type/fire
-```
+You will be prompted to:
+- Search for a Pokémon by **name**  
+- Search for Pokémon by **type** (either by entering the number or the type name)
 
 ## Tech Stack
 - **Python 3**
-- **FastAPI** for building APIs
-- **SQLite** for database management
-- **Pydantic** for data validation
-- **Uvicorn** for running the server
-- **OS** and **SQLITE3** modules for file and database handling
+- **Requests** library for HTTP API calls
+- **Standard Library** modules (like `json` and `sys`) for data handling and formatting
